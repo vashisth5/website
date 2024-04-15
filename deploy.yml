@@ -1,0 +1,23 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+   name: assignment1-deployment
+   lables: 
+     app: nginx
+spec:
+  replicas: 3
+  selector: 
+    matchLables:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec: 
+      containers:
+      - name: nginx
+        image: vashisth5/app1
+        ports:
+        - containerPort: 80
+      
+     
